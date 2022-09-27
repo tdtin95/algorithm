@@ -1,4 +1,4 @@
-package tdtin.algorithm;
+package tdtin.algorithm.dynamic.programming.TargetSumWay;
 
 import java.util.HashMap;
 import java.util.Map;
