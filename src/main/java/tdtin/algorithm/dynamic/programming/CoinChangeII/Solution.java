@@ -15,7 +15,17 @@ class Solution {
         }
         dp[0][0] = 1;
 
-        return 0;
+        for (int i = 1; i <= numOfCoin; i++) {
+            for (int num = 0; num <= amount; num++) {
+                dp[i][num] = dp[i - 1][num];
+                if (num - coins.get(i - 1) >= 0) {
+                    dp[i][num] += dp[i][num - coins.get(i - 1)];
+                }
+
+            }
+        }
+
+        return dp[numOfCoin][amount];
     }
 
     public static List<String> splitWords(String s) {
